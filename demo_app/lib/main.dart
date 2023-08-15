@@ -1,3 +1,4 @@
+// import 'package:demo_app/counter/counter.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -9,10 +10,19 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       home: Scaffold(
         body: Center(
-          child: Text('Hello World!'),
+          child: Builder(
+            builder: (context) {
+              return ElevatedButton(
+                onPressed: () {
+                  // Navigator.of(context).push(CounterPage.route());
+                },
+                child: const Text('Hello World!'),
+              );
+            },
+          ),
         ),
       ),
     );
